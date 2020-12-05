@@ -1,6 +1,6 @@
 #!name=MitM on TCP
 #!desc=在TCP请求上进行MitM
-#!system=macos
+#!system=mac
 
 [MITM]
 tcp-connection = true
