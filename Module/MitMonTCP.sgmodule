@@ -4,5 +4,5 @@
 [URL Rewrite]
 
 [MITM]
-tcp-connection = true
+tcp-connection = %APPEND% true
 hostname = %APPEND% *.googlevideo.com
