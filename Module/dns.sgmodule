@@ -1,0 +1,5 @@
+#!name=DNS Server
+#!desc=
+
+[General]
+dns-server = 10.0.0.253
