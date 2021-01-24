@@ -1,5 +1,0 @@
-#!name=auto
-#!desc=
-
-[Proxy Group]
-PROXY = select, Auto
