@@ -1,0 +1,16 @@
+#!name=Y2BAD
+#!desc=Y2BADBLOCK
+[URL Rewrite]
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+log_ - reject
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+ad_ - reject
+^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat - reject
+^https?:\/\/.+\.youtube\.com\/api\/stats\/ads - reject
+^https?:\/\/.+\.youtube\.com\/get_midroll_ - reject
+^https?:\/\/.+\.youtube\.com\/ptracking - reject
+^https?:\/\/.+\.youtube\.com\/_get_ads - reject
+^https?:\/\/.+\.youtube\.com\/pagead\/ - reject
+^https?:\/\/.+\.googlevideo\.com\/ptracking - reject
+[MITM]
+hostname = %APPEND% *.youtubei.com, *.youtube.com, *.googleapis.com, *.googlevideo.com, *.app-measurement.com
+[Script]
+Y2BADB = type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier),script-path=https://raw.githubusercontent.com/aileiys/Surge/master/y2b.js
