@@ -13,4 +13,4 @@
 [MITM]
 hostname = %APPEND% *.youtubei.com, *.youtube.com, *.googleapis.com, *.googlevideo.com, *.app-measurement.com
 [Script]
-Y2BADB = type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier),script-path=https://raw.githubusercontent.com/aileiys/Surge/master/y2b.js
+Y2BADB = type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier),script-path=https://raw.githubusercontent.com/aileiys/Surge/main/JS/youtube.js
