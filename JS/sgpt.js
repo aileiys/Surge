@@ -105,9 +105,9 @@ function checkin() {
 function GetCookie() {
   try {
     if ($request.headers && $request.url.match(/sgpt\.zjwater\.com/)) {
-      var CookieName = "吾爱破解";
+      var CookieName = "水管平台";
       var CookieKey = "CookieWA";
-      var CookieValue = $request.headers['Cookie'];
+      var CookieValue = $request.Header['Cookie'];
       if ($.getdata(CookieKey)) {
         if ($.getdata(CookieKey) != CookieValue) {
           var cookie = $.setdata(CookieValue, CookieKey);
@@ -130,7 +130,7 @@ function GetCookie() {
     }
   } catch (eor) {
     $.msg("写入Cookie失败", "", "未知错误 ‼️")
-    $.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.headers))
+    $.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.Header))
   }
   $.done();
 }
