@@ -70,9 +70,12 @@ var $ = new Env('');
 var date = new Date()
 if (typeof $request != "undefined") {
   GetCookie()
-} else {
+}
+/*
+else {
   checkin()
 }
+*/
 /*
 function checkin() {
   $.get({
@@ -105,7 +108,7 @@ function checkin() {
 function GetCookie() {
   try {
     if ($request.headers && $request.url.match(/sgpt\.zjwater\.com/)) {
-      var CookieName = "__wpkreporterwid_";
+      var CookieName = "水管平台";
       var CookieKey = "CookieWA";
       var CookieValue = $request.headers['Cookie'];
       if ($.getdata(CookieKey)) {
