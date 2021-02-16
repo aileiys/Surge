@@ -31,7 +31,7 @@ Surge 4.2.0+ 脚本配置:
 [Script]
 吾爱签到 = type=cron,cronexp=0 9 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
 
-水管平台获取Cookie = type=http-request,pattern=https:\/\/sgpt\.zjwater\.com\/VirusReport\?,script-path=https://raw.githubusercontent.com/aileiys/Surge/master/JS/sgpt.js
+水管平台获取Cookie = type=http-request,pattern=https:\/\/sgpt\.zjwater\.com\/oapi\/water-manage-auth\/api\/login\/genernateRsaKey,script-path=https://raw.githubusercontent.com/aileiys/Surge/master/JS/sgpt.js
 
 [MITM] 
 hostname= www.52pojie.cn
@@ -105,7 +105,7 @@ function checkin() {
 function GetCookie() {
   try {
     if ($request.headers && $request.url.match(/sgpt\.zjwater\.com/)) {
-      var CookieName = "水管平台";
+      var CookieName = "__wpkreporterwid_";
       var CookieKey = "CookieWA";
       var CookieValue = $request.headers['Cookie'];
       if ($.getdata(CookieKey)) {
