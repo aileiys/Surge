@@ -73,7 +73,7 @@ if (typeof $request != "undefined") {
 } else {
   checkin()
 }
-
+/*
 function checkin() {
   $.get({
     url: 'https://www.52pojie.cn/home.php?mod=task&do=apply&id=2&mobile=no',
@@ -100,14 +100,14 @@ function checkin() {
     $.done();
   })
 }
-
+*/
 
 function GetCookie() {
   try {
     if ($request.headers && $request.url.match(/sgpt\.zjwater\.com/)) {
       var CookieName = "水管平台";
       var CookieKey = "CookieWA";
-      var CookieValue = $request.Header['Cookie'];
+      var CookieValue = $request.headers['Cookie'];
       if ($.getdata(CookieKey)) {
         if ($.getdata(CookieKey) != CookieValue) {
           var cookie = $.setdata(CookieValue, CookieKey);
@@ -130,7 +130,7 @@ function GetCookie() {
     }
   } catch (eor) {
     $.msg("写入Cookie失败", "", "未知错误 ‼️")
-    $.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.Header))
+    $.log(JSON.stringify(eor) + "\n" + eor + "\n" + JSON.stringify($request.headers))
   }
   $.done();
 }
